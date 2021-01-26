@@ -8,19 +8,45 @@
             <div class="row">
                 <div class="col-4 mx-auto">
                     
-            <form id="burger-choice">
-  <div class="mb-3">
-                        <input type="text" class="form-control" id="burger-name" placeholder="Name your burger">
+            <form class="burger-choice">
+  
+                        <input type="text" class="form-group" id="burger-name" name="burger_name">
                 </div>
 
-                <button type="submit" class="btn btn-danger">Eat Me</button>
+                <button type="submit" class="btn btn-danger">New Burger</button>
             </form>
             <br>
             <p>Enter the burger you would most like to eat. No calories on this page!</p>
-
-
-</form>
         </div>
     </div>
 
 </div>
+            <div class="row">
+                <div class="col-6" id="ready">
+                    <h2>Burgers Ready to Eat:</h2>
+                    <ul>
+                        {{#each burger}} {{#unless devoured}}
+                        {{> burgers/burger-block devour=true}}
+                        <li>
+                            {{this.id}}. {{this.burger_name}}
+                            {{!-- <button class="btn btn-warning" type="submit">Eat Me!</button> --}}
+                        </li>
+                        {{/unless}} {{/each}}
+                    </ul>
+                </div>
+                <div class="col-6" id="eaten">
+                    <h2>Burgers Devoured:</h2>
+                    <ul>
+                        {{#each burger}} {{#if devoured}}
+                        {{> burgers/burger-block devour=false}}
+                        <li>
+                            {{this.id}}. {{this.burger_name}}
+                        </li>
+                        {{/if}} {{/each}}
+                    </ul>
+                </div>
+            </div>
+
+        
+
+
