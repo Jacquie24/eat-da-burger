@@ -8,10 +8,14 @@
             <div class="row">
                 <div class="col-4 mx-auto">
                     
-            <form class="burger-choice">
-  
-                        <input type="text" class="form-group" id="burger-name" name="burger_name">
+            <form class="create-form">
+                <div class="form group">
+                    <label for="burger-name">Burger:</label>
+                    <input type="text" id="burger-name" name="burger_name">
                 </div>
+{{!--   
+                        <input type="text" class="form-group" id="burger-name" name="burger_name">
+                </div> --}}
 
                 <button type="submit" class="btn btn-danger">Add Burger</button>
             </form>
@@ -27,10 +31,10 @@
                     <ul>
                         {{#each burger}} {{#unless devoured}}
                         {{> burgers/burger-block devour=true}}
-                        <li>
+                        {{!-- <li>
                             {{this.id}}. {{this.burger_name}}
                             {{!-- <button class="btn btn-warning" type="submit">Eat Me!</button> --}}
-                        </li>
+                        </li> --}}
                         {{/unless}} {{/each}}
                     </ul>
                 </div>
@@ -39,9 +43,9 @@
                     <ul>
                         {{#each burger}} {{#if devoured}}
                         {{> burgers/burger-block devour=false}}
-                        <li>
+                        {{!-- <li>
                             {{this.id}}. {{this.burger_name}}
-                        </li>
+                        </li> --}}
                         {{/if}} {{/each}}
                     </ul>
                 </div>
