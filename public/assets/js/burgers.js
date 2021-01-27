@@ -2,9 +2,10 @@
 $(function() {
 
 
-    $(".change-devour").on("click", (event) => {
+    $(".change-devour").on("click", function(event) {
         var id = $(this).data("id");
         var newDevour = $(this).data("newdevour");
+        console.log(id);
 
         var newDevourState = {
             devoured: newDevour,
@@ -24,12 +25,12 @@ $(function() {
       );
     });
   
-    $(".create-form").on("click", function(event) {
+    $("#add-burger").on("click", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBurger = {
-        burger_name: $("#burger-name").val().trim(),
+        name: $("#burger-name").val().trim(),
 
       };
       console.log(newBurger);
