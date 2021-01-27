@@ -1,6 +1,4 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
+
             <h1 class="text-center">Eat Da Burger!</h1>
             <br>
                     
@@ -19,34 +17,34 @@
             <br>
             <p>Enter the burger you would most like to eat. No calories on this page!</p>
         </div>
-    </div>
+        <div>
 
-</div>
-            <div class="row">
-                <div class="col-6" id="ready">
                     <h2>Burgers Ready to Eat:</h2>
                     <ul>
                         {{#each burger}} {{#unless devoured}}
-                        {{> burgers/burger-block devour=true}}
-                        {{!-- <li>
+                        {{!-- {{> burgers/burger-block devour=true}} --}}
+                        <li>
                             {{this.id}}. {{this.burger_name}}
-                            {{!-- <button class="btn btn-warning" type="submit">Eat Me!</button> --}}
-                        </li> --}}
+	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+		{{#if devour}}YUM! YUM!{{else}}EAT ME{{/if}}
+	</button>
+                        </li>
                         {{/unless}} {{/each}}
                     </ul>
                 </div>
-                <div class="col-6" id="eaten">
+                <div>
+
                     <h2>Burgers Devoured:</h2>
                     <ul>
                         {{#each burger}} {{#if devoured}}
-                        {{> burgers/burger-block devour=false}}
-                        {{!-- <li>
+                        {{!-- {{> burgers/burger-block devour=false}} --}}
+                        <li>
                             {{this.id}}. {{this.burger_name}}
-                        </li> --}}
+                        </li>
                         {{/if}} {{/each}}
                     </ul>
                 </div>
-            </div>
+            
 
         
 

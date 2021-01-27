@@ -1,7 +1,12 @@
+body {
+  background: orange;
+
+}
+
+
 li {
     padding: 5px;
     margin: 5px;
-    background: url(../img/burgerimage.jpg);
   }
   
   .label {
