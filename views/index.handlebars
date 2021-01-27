@@ -1,22 +1,23 @@
 <div class="container">
-    <div class="jumbotron">
+
+        <img src="/assets/img/burgerpic.png" alt="Animated burger" style="width:200px;height:200px;">
+
 
             <h1 class="text-center">Eat Da Burger!</h1>
             <br>
                     
             <form>
                 <div class="form group">
-                    <label for="burger-name">Burger:</label>
-                    <input type="text" id="burger-name" name="burger_name">
+                    {{!-- <label for="burger-name">Burger:</label> --}}
+                    <input type="text" id="burger-name" name="burger_name" class="mb-2">
                     <br>
-                
+            <p id="enter-text">Enter the burger you would most like to eat. No calories on this page!</p>
 
                 <button type="submit" class="btn btn-danger text-center" id="add-burger">Add Burger</button>
                 </div>
             </form>
-            <br>
-            <p>Enter the burger you would most like to eat. No calories on this page!</p>
-        </div>
+            <hr>
+
                 
 
         <div class="row">
